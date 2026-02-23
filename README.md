@@ -1,9 +1,25 @@
-##[点我查看中文说明/Click here for Chinese instructions](https://github.com/tyler-yox/blog/blob/gh-pages/README_zh_CN.md)
-
 # Blog Address
 
 <https://tyler-yox.github.io/blog/>
 
+# Develop
+## LMDE
+```
+# First-time Setup
+sudo apt-get install ruby-full build-essential ruby-bundler
+gem install jekyll bundler
+export GEM_HOME="$HOME/.local/share/gem/ruby/3.3.0"
+export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+source ~/.bashrc
+
+# Serve
+bundle update
+bundle exec jekyll serve
+
+# Test
+google-chrome --disable-web-security --user-data-dir="/tmp/chrome_dev"
+# Go to http://localhost:4000/
+```
 
 # Must Modify
 
