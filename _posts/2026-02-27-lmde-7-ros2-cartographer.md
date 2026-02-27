@@ -20,15 +20,15 @@ cd scripts
 ```
 
 The following modifications were needed to compile and link with Abseil 
-abseil-cpp/absl/synchronization/internal/graphcycles.cc
-    add #include <limits>
-abseil-cpp/absl/strings/internal/str_format/extension.h
-    add #include <cstdint>
-abseil-cpp/absl/debugging/failure_signal_handler.cc
-    add <size_t> to this line:
-    modify size_t stack_size = (std::max<size_t>(SIGSTKSZ, 65536) + page_mask) & ~page_mask
-abseil-cpp/absl/base/config.h
-    delete #define ABSL_HAVE_STD_STRING_VIEW 1
+- abseil-cpp/absl/synchronization/internal/graphcycles.cc
+    - add #include <limits>
+- abseil-cpp/absl/strings/internal/str_format/extension.h
+    - add #include <cstdint>
+- abseil-cpp/absl/debugging/failure_signal_handler.cc
+    - add <size_t> to this line:
+        - modify size_t stack_size = (std::max<size_t>(SIGSTKSZ, 65536) + page_mask) & ~page_mask
+- abseil-cpp/absl/base/config.h
+    - delete #define ABSL_HAVE_STD_STRING_VIEW 1
 
 ```
 cd abseil-cpp/build
